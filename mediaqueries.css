@@ -81,6 +81,9 @@
 
 @media screen and (max-width:1000px) {
 
+  .email-icon {
+    height: 30px;
+}
   .about-containers,
   .contact-info-upper-container,
   .btn-container {
@@ -194,7 +197,7 @@
   }
 
   p {
-    margin: 20px;
+    margin: 7px;
     color: rgb(118, 117, 117);
   }
 }
