@@ -8,7 +8,6 @@
 
 body {
   font-family: "Poppins", sans-serif;
-
 }
 
 html {
@@ -52,15 +51,12 @@ nav {
   transition: all 0.3s ease;
 }
 
-
-
 .nav-links {
   display: flex;
   gap: 30px;
   list-style: none;
   font-size: 20px;
 }
-
 
 a {
   color: black;
@@ -72,7 +68,6 @@ a:hover {
   color: rgb(150, 43, 150);
   text-decoration: underline;
   text-underline-offset: 16px;
-  /* 1rem */
   text-decoration-color: rgb(121, 0, 111);
 }
 
@@ -82,7 +77,6 @@ h2 {
 
 .logo {
   font-size: 25px;
-  /* 2rem */
   font-weight: bold;
 }
 
@@ -176,30 +170,23 @@ section {
 /* PROFILE SECTION */
 #profile {
   display: flex;
-
   justify-content: center;
   gap: 80px;
   height: 500px;
-
-
 }
 
 #image1 img {
-
   height: 350px;
   border-radius: 0%;
   object-fit: cover;
   display: block;
-
 }
-
 
 .section__pic-container {
   display: flex;
   padding: 40px 40px;
   height: 400px;
   width: 400px;
-
 }
 
 .section__text {
@@ -261,21 +248,18 @@ section {
   border: none;
 }
 
-
 .btn-color-2:hover {
   cursor: pointer;
 }
-
 
 .btn-color-2:hover {
   background: linear-gradient(to right, #682b70, #db6be3);
   color: rgb(255, 255, 255);
 }
 
-
 .btn-color-2 {
   background: linear-gradient(to right, #5e1567, #98339f);
-  color: white
+  color: white;
 }
 
 /* ABOUT SECTION */
@@ -287,7 +271,6 @@ section {
   background-color: #e6e5e7d3;
   position: relative;
 }
-
 
 .about-containers {
   display: grid;
@@ -306,11 +289,9 @@ section {
   display: flex;
 }
 
-
 .about-pic {
   border-radius: 32px;
 }
-
 
 .details-container {
   padding: 15px;
@@ -395,91 +376,159 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
-#projects {
+/* PROJECTS SECTION (General styling for both recent and UI/UX projects) */
+#recent-projects,
+#uiux-projects {
   padding: 60px 20px;
-  background: #fff;
   text-align: center;
 }
 
-.projects-wrapper {
-  overflow: hidden;
-  flex: 1;
-  margin: 0 10px;
+#recent-projects {
+  background-color: rgb(220, 220, 220);
 }
 
-.projects-carousel {
+.title {
+  background: linear-gradient(to right, #420549, #cc16d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Container for Recent Projects (no carousel arrows) */
+.projects-container-wrapper {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
   display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
 }
 
-.project-card {
+#recent-projects .projects-carousel {
+  display: flex;
+  gap: 30px;
+  justify-content: center; /* Center the project cards */
+  flex-wrap: wrap; /* Allow cards to wrap to next line if needed */
+  padding-bottom: 30px; /* Space above "View All Projects" link */
+  overflow-x: visible; /* Ensure content is not hidden by overflow */
+  scroll-behavior: auto; /* Remove smooth scroll behavior for static display */
+}
 
+/* Project Card Styling (applied to both sections) */
+.project-card {
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
-  transition: transform 0.3s;
-  cursor: pointer;
+  width: 300px;
+  min-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-img {
   width: 100%;
-  height: 300px;
-  border-radius: 10px;
+  height: 200px;
+  border-radius: 8px;
   object-fit: cover;
+  margin-bottom: 15px;
 }
-
-
 
 .project-tag {
-  color: #4e4e4e;
-  font-size: 0.9rem;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
-.projects-wrapper::-webkit-scrollbar {
+.more-details-link {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
+
+.more-details-link:hover {
+  background-color: #0056b3;
+}
+
+/* View All Projects Link */
+.view-all-projects-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #682b70; /* Using your existing brand color */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 15px;
+  border: 2px solid #98339f; /* Using your existing brand color */
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.view-all-projects-link:hover {
+  background-color: #98339f;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* UI/UX Projects Section (Original structure, with auto-scroll) */
+#uiux-projects .projects-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+#uiux-projects .projects-carousel {
+  display: flex;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+/* Hide scrollbar for specific browsers for UI/UX carousel */
+#uiux-projects .projects-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-.projects-wrapper {
+#uiux-projects .projects-wrapper {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-#project .title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
 
-.project-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.projects-wrapper {
-  overflow: hidden;
-  flex: 1;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-
+/* CONTACT */
 /* CONTACT */
 #contact {
   background: #e7e7e7;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 200px;
+  height: fit-content; /* Change from fixed height to fit-content */
+  padding: 50px 20px; /* Add padding to top/bottom */
 }
 
 .contact-info-upper-container {
@@ -491,6 +540,9 @@ article .icon {
   background: rgb(203, 203, 203);
   margin: 32px auto;
   padding: 8px;
+  /* Add flex-wrap and max-width for better responsiveness */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  max-width: 400px; /* Limit the max-width of the container */
 }
 
 .contact-info-container {
@@ -499,24 +551,29 @@ article .icon {
   justify-content: center;
   gap: 8px;
   margin: 16px;
+  /* Add width to each contact item to ensure wrapping */
+  width: 100%; /* Make each item take full width on wrap */
+  max-width: 300px; /* Max width for individual item */
+  text-align: left; /* Align text within each container */
 }
 
 .contact-info-container p {
   font-size: larger;
-  color: black
+  color: black;
+  /* Remove extra padding that might push content */
+  padding: 0;
 }
 
 .contact-icon {
   cursor: default;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .email-icon {
   height: 40px;
 }
-
 /* FOOTER SECTION */
 footer {
-
   margin: 0 16px;
 }
 
@@ -550,7 +607,6 @@ article:hover {
   border-color: #007bff;
 }
 
-
 /* SERVICES */
 .what-i-do-container {
   margin-top: 32px;
@@ -583,13 +639,11 @@ article:hover {
 
 .service-box:hover {
   background: linear-gradient(to right, #5e1567, #98339f);
-  ;
   transform: translateY(-5px);
 }
 
 .service-box h3 {
   color: #682b70;
-
   margin: 12px 0 8px;
 }
 

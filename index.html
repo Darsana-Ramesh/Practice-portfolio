@@ -11,12 +11,12 @@
 
 <body>
   <nav id="desktop-nav">
-    <div class="logo">Darsana </div>
+    <div class="logo">Darsana</div>
     <div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#recent-projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -32,7 +32,7 @@
       <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#web-projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#recent-projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
 
@@ -52,11 +52,11 @@
       <p class="section__text__p2">Hello, My Name Is</p>
       <h1 class="title">DARSANA R</h1>
       <p class="section__text__p2">Web Developer and Designer</p>
-      <p style="margin:0 10px 20px 10px; font-weight: lighter; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">I’m a developer and designer with a background in Information Technology, 
+      <p style="margin:0 10px 20px 10px; font-weight: lighter; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">I’m a developer and designer with a background in Information Technology,
         passionate about crafting visually engaging and user-focused digital experiences.</p>
       <div class="btn-container">
         <button class="btn btn-color-2" onclick="window.open('images/resume.png')">
-          Download CV
+          Download My Resume
         </button>
       </div>
     </div>
@@ -127,14 +127,14 @@
 
       <div class="article-container">
         <article title="python">
-          <img src="images/python.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/python.png" alt="Python" class="tool-icon" />
         </article>
         <article title="java">
-          <img src="images/java.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/java.png" alt="Java" class="tool-icon" />
         </article>
 
         <article title="C">
-          <img src="images/C.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/C.png" alt="C Language" class="tool-icon" />
         </article>
 
         <article title="HTML">
@@ -148,90 +148,56 @@
           <img src="images/js.png" alt="JavaScript" class="tool-icon" />
         </article>
         <article title="Bootstrap">
-          <img src="images/bootstrap.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/bootstrap.png" alt="Bootstrap" class="tool-icon" />
         </article>
 
         <article title="figma">
-          <img src="images/figma.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/figma.png" alt="Figma" class="tool-icon" />
         </article>
         <article title="flask">
-          <img src="images/flask.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/flask.png" alt="Flask" class="tool-icon" />
         </article>
 
         <article title="php">
-          <img src="images/php.png" alt="TypeScript" class="tool-icon" />
+          <img src="images/php.png" alt="PHP" class="tool-icon" />
         </article>
 
         <article title="MySQL">
-          <img src="images/mysql.png" alt="PostgreSQL" class="tool-icon" />
+          <img src="images/mysql.png" alt="MySQL" class="tool-icon" />
         </article>
 
         <article title="GitHub">
-          <img src="images/github.png" alt="Git" class="tool-icon" />
+          <img src="images/github.png" alt="GitHub" class="tool-icon" />
         </article>
       </div>
 
     </div>
   </section>
+
+  <section id="recent-projects" style="background-color: rgb(220, 220, 220);">
+    <h2 class="title">Recent Projects</h2>
+    <div class="projects-container-wrapper"> <div class="projects-carousel" id="recentProjectsCarousel">
+            <div class="project-card">
+                <img src="images/project-1.png" alt="CORBEAT - Heart Disease Predictor" class="project-img" />
+                <h2 class="project-title">CORBEAT – Heart Disease Predictor</h2>
+                <p class="project-tag">ML Project</p>
+                <a href="corbeat-details.html" class="more-details-link">More Details</a>
+            </div>
+
+            <div class="project-card">
+                <img src="images/project-2.png" alt="Canteen Management System" class="project-img" />
+                <h2 class="project-title">Canteen Management System</h2>
+                <p class="project-tag">DBMS Project</p>
+                <a href="canteen-details.html" class="more-details-link">More Details</a>
+            </div>
+
+            </div>
+        <a href="projects/projects.html" class="view-all-projects-link">View All Projects &rarr;</a>
+    </div>
+</section>
+
+
   
-  <section id="web-projects" style="background-color: rgb(220, 220, 220);">
-    <h2 class="title">Web-Development Projects</h2>
-    <div class="project-nav">
-      <div class="projects-wrapper" id="webWrapper">
-        <div class="projects-carousel" id="webCarousel">
-          <div class="project-card"
-            onclick="location.href='https://github.com/Darsana-Ramesh/HeartDiseasePrediction-ML'">
-            <img src="images/project-1.png" class="project-img" />
-            <h2 class="project-title">CORBEAT – Heart Disease Predictor</h2>
-            <p class="project-tag">ML Project</p>
-          </div>
-          <div class="project-card" onclick="location.href='https://darsana-ramesh.github.io/TimeLess-Taste-canteen/'">
-            <img src="images/project-2.png" class="project-img" />
-            <h2 class="project-title">Canteen Management System</h2>
-            <p class="project-tag">DBMS Project</p>
-          </div>
-          <div class="project-card" onclick="location.href='https://darsana-ramesh.github.io/online-course-platform/'">
-            <img src="images/project-4.png" class="project-img" />
-            <h2 class="project-title">Online Learning Website</h2>
-            <p class="project-tag">Web Dev</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="uiux-projects">
-    <h2 class="title">UI/UX Projects</h2>
-    <div class="project-nav">
-      <div class="projects-wrapper" id="uiuxWrapper">
-        <div class="projects-carousel" id="uiuxCarousel">
-
-          <div class="project-card">
-            <img src="images/uiux-1.png" class="project-img" />
-            <h2 class="project-title">Food Ordering App UI</h2>
-
-          </div>
-          <div class="project-card">
-            <img src="images/uiux-2.png" class="project-img" />
-            <h2 class="project-title">House Selling Website</h2>
-
-          </div>
-
-          <div class="project-card">
-            <img src="images/project-2.png" class="project-img" />
-            <h2 class="project-title">Canteen Management UI</h2>
-
-          </div>
-          <div class="project-card">
-            <img src="images/uiux-2.png" class="project-img" />
-            <h2 class="project-title">House Selling Website</h2>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
@@ -255,7 +221,7 @@
     <footer>
       <p><a href="#about">About</a></p>
       <p><a href="#service">Services</a></p>
-      <p><a href="#projects">Projects</a></p>
+      <p><a href="#recent-projects">Projects</a></p>
       <p>Copyright &#169; 2025 portfolio. All Rights Reserved.</p>
     </footer>
   </section>

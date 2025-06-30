@@ -14,8 +14,16 @@
 }
 
 @media (max-width: 768px) {
-  .project-card {
-    min-width: 400px;
+  /* Adjusted for responsiveness of 2-column layout */
+  #recent-projects .project-card {
+    min-width: unset; /* Remove fixed min-width */
+    width: 45%; /* Adjust width to allow two cards per row with gap */
+  }
+
+  #recent-projects .projects-carousel {
+    flex-direction: row; /* Ensure they stay in a row */
+    justify-content: center;
+    gap: 20px; /* Adjust gap for smaller screens */
   }
 }
 
@@ -45,9 +53,9 @@
     margin-top: 2rem;
   }
 
-  .arrow {
-    display: none;
-  }
+  /* .arrow display none removed as carousel arrows are removed from HTML for recent-projects */
+  /* If you want to hide UI/UX carousel arrows on smaller screens, re-add this specifically for them or through JS */
+
 
   section,
   .section-container {
@@ -148,6 +156,11 @@
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+  }
+
+  /* For recent projects, stack cards on small screens */
+  #recent-projects .project-card {
+    width: 90%; /* Make them full width on tiny screens */
   }
 
 
