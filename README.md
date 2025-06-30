@@ -4,7 +4,7 @@ This is my personal portfolio website built using **HTML**, **CSS**, and **JavaS
 
 ## 🔗 Live Demo
 
-[Check it Out Here 🚀][(https://yourusername.github.io/your-portfolio-repo/)  ](https://darsana-ramesh.github.io/Portfolio/)
+[Check it Out Here 🚀](https://darsana-ramesh.github.io/Portfolio/)
 
 
 ---
