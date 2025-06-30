@@ -56,4 +56,4 @@ function setupAutoScroll(wrapperId, carouselId, scrollSpeed = 1.5) {
 }
 
 // Apply auto-scroll only to the UI/UX projects section now
-setupAutoScroll('uiuxWrapper', 'uiuxCarousel');
+// setupAutoScroll('uiuxWrapper', 'uiuxCarousel');

@@ -15,8 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0; /* Adjusted padding as nav handles its own spacing */
-  padding-top: 70px; /* Space for sticky nav */
+  /* padding-top: 70px; Space for sticky nav */
 }
 
 html {
@@ -25,8 +24,8 @@ html {
 
 p {
   color: rgb(79, 79, 79);
-  padding: 0px 20px; /* Added padding to general paragraphs */
-  font-size: large; /* Added font size to general paragraphs */
+  padding: 0; /* Remove default padding for generic p tags */
+  font-size: large;
 }
 
 a,
@@ -44,13 +43,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  /* Updated background for better visibility */
-  background-color: rgb(240, 240, 240); /* A more solid light grey */
-  /* backdrop-filter and border-color adjusted for visibility */
-  border: 1px solid rgba(163, 163, 163, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(198, 197, 197, 0.895);
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  width: 100%; /* Ensure nav spans full width */
+  width: 100%;
 }
 
 .nav-links {
@@ -84,7 +83,7 @@ a:hover {
 
 /* HAMBURGER MENU */
 #hamburger-nav {
-  display: none; /* Hidden by default on desktop */
+  display: none;
 }
 
 .hamburger-menu {
@@ -133,7 +132,7 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 300px; /* Allows the menu to open */
+  max-height: 300px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -149,14 +148,14 @@ a:hover {
 }
 
 .hamburger-icon span:first-child {
-  transform: none; /* Reset if previously transformed */
-  opacity: 1; /* Ensure visibility */
+  transform: none;
+  opacity: 1;
 }
 
 /* SECTION STYLES */
 section {
   width: 100%;
-  max-width: 1400px; /* Limit overall width */
+  max-width: 1400px;
   padding: 60px 20px;
   text-align: center;
 }
@@ -176,26 +175,29 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Stack project entries vertically */
-  align-items: center; /* Center the project entries */
+  flex-direction: column;
+  align-items: center;
 }
 
-.projects-carousel { /* Renamed from previous .projects-container to match your HTML */
+/* General carousel/list for projects (both recent and UI/UX) */
+.projects-carousel,
+.projects-list-uiux { /* Apply the same styling to both project sections */
   display: flex;
-  flex-direction: column; /* Stack entries vertically */
+  flex-direction: column; /* Stack projects one below another */
   gap: 60px; /* Space between each project entry */
   justify-content: center;
   align-items: center; /* Center project entries */
   padding-bottom: 30px;
-  overflow-x: hidden; /* Prevent horizontal scroll for the main container */
+  overflow-x: hidden;
   scroll-behavior: auto;
+  width: 100%; /* Ensure it takes full width of its wrapper */
 }
 
-/* --- NEW PROJECT ENTRY STYLES --- */
+/* --- PROJECT ENTRY STYLES --- */
 
-/* Hide/Remove old .project-card styles */
-.project-card { /* */
-    display: none; /* Hide the old project cards */
+/* Ensure old project-card styles are removed or overridden */
+.project-card {
+    display: none; /* Hide the old project cards if they somehow persist */
 }
 
 /* Style for each individual project entry block */
@@ -209,10 +211,10 @@ section {
 
 .project-entry-img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
   max-height: 450px; /* Control max height of project images */
   object-fit: cover;
-  border-radius: 8px; /* Slightly rounded corners for images */
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
@@ -222,28 +224,31 @@ section {
 
 .project-entry-header {
   display: flex;
+  flex-wrap: wrap; /* Allow title and link to wrap on smaller screens */
   justify-content: space-between;
-  align-items: center; /* Align title and link vertically */
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .project-entry-title {
-  font-size: 2rem; /* Larger title for prominence */
+  font-size: 2rem;
   color: #333;
-  margin: 0; /* Remove default margin */
+  margin: 0;
+  flex-grow: 1; /* Allow title to take available space */
 }
 
 .visit-site-link {
   font-size: 1rem;
-  color: #682b70; /* Your brand color for the link */
+  color: #682b70;
   text-decoration: none;
   font-weight: 600;
-  white-space: nowrap; /* Prevents "Visit Site" from wrapping */
+  white-space: nowrap;
   transition: color 0.3s ease, text-decoration 0.3s ease;
+  margin-left: 15px; /* Space from title */
 }
 
 .visit-site-link:hover {
-  color: #cc16d9; /* Lighter shade on hover */
+  color: #cc16d9;
   text-decoration: underline;
 }
 
@@ -251,67 +256,157 @@ section {
   font-size: 1rem;
   color: #555;
   margin-bottom: 20px;
-  line-height: 1.6; /* Improved line spacing for readability */
+  line-height: 1.6;
+}
+
+/* Contact section styles (from previous style.css) */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: (250, 250, 250);
+    margin: 2rem auto;
+    padding: 1.5rem;
+    flex-wrap: wrap; /* Added for responsiveness */
+    gap: 20px; /* Added for spacing */
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container p {
+    font-size: larger;
+}
+
+.contact-icon {
+    cursor: default;
+    width: 2rem; /* Adjusted icon size */
+    height: 2rem;
+}
+
+/* Footer styles */
+footer {
+    height: 7vh;
+    margin-top: 30px; /* Increased margin */
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    color: rgb(85, 85, 85);
+    font-size: smaller;
+    padding: 0; /* Override general p padding for footer */
+}
+
+footer p a {
+    color: rgb(85, 85, 85);
+    text-decoration: none;
+    margin: 0 10px; /* Space between links */
+    font-size: smaller;
+}
+
+footer p a:hover {
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: rgb(121, 0, 111);
 }
 
 
 /* RESPONSIVE DESIGN */
-@media screen and (max-width: 1400px) {
-  /* No specific project card changes here, general layout handled by flex-wrap */
-}
-
 @media screen and (max-width: 1200px) {
   #desktop-nav {
-    display: none; /* Hide desktop nav */
+    display: none;
   }
   #hamburger-nav {
-    display: flex; /* Show hamburger nav */
+    display: flex;
+  }
+  /* Adjusted for general section padding on smaller screens */
+  section {
+    padding: 30px 10px; /* Reduce horizontal padding for sections */
   }
 }
 
 @media screen and (max-width: 768px) {
-  /* Removed old .project-card responsive rules */
   .title {
     font-size: 32px;
   }
   .project-entry {
-    padding: 0 10px; /* Smaller padding on smaller screens */
+    padding: 0 10px; /* Smaller horizontal padding for project entries */
   }
   .project-entry-img {
-    max-height: 300px; /* Adjust max height for smaller screens */
+    max-height: 250px; /* Adjust max height for smaller screens */
   }
   .project-entry-title {
     font-size: 1.5rem; /* Smaller title on mobile */
   }
   .visit-site-link {
     font-size: 0.9rem; /* Smaller link text on mobile */
+    margin-left: 10px; /* Adjust spacing */
   }
   .project-entry-description {
     font-size: 0.9rem; /* Smaller description text on mobile */
   }
+  /* Ensure header elements wrap if needed */
+  .project-entry-header {
+      flex-direction: column; /* Stack title and link vertically */
+      align-items: flex-start; /* Align stacked items to the left */
+      gap: 5px; /* Small gap between title and link when stacked */
+  }
+  .visit-site-link {
+      margin-left: 0; /* Remove left margin when stacked */
+  }
 }
 
 @media screen and (max-width: 600px) {
-  /* Removed old .project-card responsive rules */
-  section {
-    padding: 30px 10px;
-  }
   .title {
     font-size: 28px;
   }
-  .view-all-projects-link { /* This may no longer be used if it was a separate button */
-    font-size: 1rem;
-    padding: 8px 12px;
+  /* Footer responsive adjustments */
+  footer {
+    height: fit-content;
+    margin-bottom: 1rem;
   }
-  /* Responsive styles for hamburger menu links */
-  .logo {
-    font-size: 1.5rem;
+  footer p {
+    font-size: 0.8rem;
   }
-  .menu-links a { /* Applying font size to hamburger menu links */
-    font-size: 1rem;
+  footer p a {
+    font-size: 0.8rem;
+  }
+  .contact-info-upper-container {
+    flex-direction: column; /* Stack contact info vertically */
+    align-items: center;
+  }
+  .contact-info-container p {
+    font-size: 1rem; /* Adjust font size for mobile contact info */
+  }
+  .hamburger-icon {
+    width: 25px; /* Adjust hamburger icon size */
+    height: 20px;
+  }
+  .menu-links a {
+    font-size: 1rem; /* Adjust hamburger menu link font size */
   }
 }
 
-@media screen and (max-width: 480px) {
-    /* Further fine-tuning for very small screens if needed */
+/* Ensure the body padding-top doesn't create issues with contact section */
+
+/* Adjust general paragraph padding for better mobile display */
+p {
+  padding: 0 10px; /* Consistent padding for all paragraphs */
 }

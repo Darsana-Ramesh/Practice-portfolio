@@ -15,7 +15,7 @@ html {
 }
 
 p {
-  padding: 0px 20px;
+  padding: 0px 10px;
   font-size: large;
   color: rgb(79, 79, 79);
 }
@@ -69,10 +69,6 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 16px;
   text-decoration-color: rgb(121, 0, 111);
-}
-
-h2 {
-  padding: 0 0 20px 0;
 }
 
 .logo {
@@ -208,6 +204,7 @@ section {
   margin: 3px;
   color: #434040;
   font-size: 30px;
+  
   margin-bottom: 16px;
 }
 
@@ -248,18 +245,17 @@ section {
   border: none;
 }
 
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-2:hover {
-  background: linear-gradient(to right, #682b70, #db6be3);
-  color: rgb(255, 255, 255);
-}
-
 .btn-color-2 {
   background: linear-gradient(to right, #5e1567, #98339f);
   color: white;
+  margin: 10px;
+  width: 180px;
+}
+
+.btn-color-2:hover {
+  cursor: pointer; /* From the first hover block */
+  background: linear-gradient(to right, #682b70, #db6be3); /* From the second hover block */
+  color: white; /* Explicitly set to white, combining redundant definitions */
 }
 
 /* ABOUT SECTION */
@@ -384,16 +380,16 @@ article .icon {
 }
 
 #recent-projects {
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(245, 244, 244);
 }
 
 .title {
   background: linear-gradient(to right, #420549, #cc16d9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 40px;
+  font-size: 60px;
   text-align: center;
-  margin-bottom: 40px;
+  margin: 10px;
 }
 
 /* Container for Recent Projects (no carousel arrows) */
@@ -449,14 +445,21 @@ article .icon {
 .project-tag {
   color: #555;
   font-size: 0.95rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   flex-grow: 1;
+}
+
+.proj-p{
+  font-size: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  padding: 4px;
+  color: #823d86;
 }
 
 .more-details-link {
   display: inline-block;
-  background-color: #007bff;
-  color: white;
+  background-color: #9f2983;
+  color: white; /* Link text color is white by default */
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
@@ -466,7 +469,10 @@ article .icon {
 }
 
 .more-details-link:hover {
-  background-color: #0056b3;
+  background-color: #823791;
+  color: white; /* Explicitly keep the text color white on hover */
+  text-decoration: none; /* Ensure no underline */
+  /* Remove or comment out text-decoration-color: #ccc; if you don't want a grey underline */
 }
 
 /* View All Projects Link */
