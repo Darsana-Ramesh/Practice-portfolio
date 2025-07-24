@@ -1,284 +1,340 @@
 /* GENERAL STYLES */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");  */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: rgb(220, 220, 220); /* Background color for the page */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  /* padding-top: 70px; Space for sticky nav */
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(220, 220, 220); /* Background color for the page */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1.6; /* Improved readability for body text */
+    color: #333; /* Slightly darker default text color for better contrast */
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for better responsiveness with rem units */
 }
 
 p {
-  color: rgb(79, 79, 79);
-  padding: 0; /* Remove default padding for generic p tags */
-  font-size: large;
+    color: rgb(79, 79, 79); /* Keep original paragraph color */
+    padding: 0;
+    font-size: 1rem; /* Use rem for scalability based on html font-size */
+    line-height: 1.7; /* Slightly increased line-height for paragraphs */
+    margin-bottom: 1rem; /* Add consistent spacing below paragraphs */
 }
 
 a,
 .btn {
-  transition: all 300ms ease;
+    transition: all 300ms ease;
 }
 
 /* DESKTOP NAV */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(198, 197, 197, 0.895);
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(198, 197, 197, 0.895);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .nav-links {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  font-size: 20px;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 1.125rem; /* ~18px, slightly more common */
+    font-weight: 500; /* Slightly bolder for navigation */
 }
 
 a {
-  color: black;
-  text-decoration: none;
-  text-decoration-color: white;
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white; /* This will be overridden by text-decoration */
 }
 
 a:hover {
-  color: rgb(150, 43, 150);
-  text-decoration: underline;
-  text-underline-offset: 16px;
-  text-decoration-color: rgb(121, 0, 111);
+    color: rgb(150, 43, 150);
+    text-decoration: underline;
+    text-underline-offset: 8px; /* Slightly reduced offset for better aesthetics */
+    text-decoration-color: rgb(121, 0, 111);
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: bold;
+    font-size: 1.563rem; /* ~25px, using rem */
+    font-weight: 700; /* Bolder for prominence */
+    color: #333; /* Consistent color with body text or a distinct brand color */
 }
 
 .logo:hover {
-  cursor: default;
+    cursor: default;
 }
 
 /* HAMBURGER MENU */
 #hamburger-nav {
-  display: none;
+    display: none;
 }
 
 .hamburger-menu {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  width: 30px;
-  cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
 }
 
 .hamburger-icon span {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-links {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    min-width: 150px; /* Ensure a minimum width for readability */
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px; /* Rounded corners for menu */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 .menu-links a {
-  display: block;
-  padding: 10px;
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+    display: block;
+    padding: 10px 20px; /* Increased horizontal padding */
+    font-size: 1.125rem; /* Consistent with desktop nav links */
+    color: #333; /* Consistent text color */
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Light hover background */
+    color: rgb(150, 43, 150); /* Match hover color */
+    text-underline-offset: 4px; /* Smaller underline for menu */
 }
 
 .menu-links li {
-  list-style: none;
+    list-style: none;
 }
 
 .menu-links.open {
-  max-height: 300px;
+    max-height: 300px; /* Or a dynamic height based on content */
 }
 
 .hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
+    transform: rotate(45deg) translate(10px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
 
 .hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
+    transform: rotate(-45deg) translate(10px, -5px);
 }
 
 .hamburger-icon span:first-child {
-  transform: none;
-  opacity: 1;
+    transform: none;
+    opacity: 1;
 }
 
 /* SECTION STYLES */
 section {
-  width: 100%;
-  max-width: 1400px;
-  padding: 60px 20px;
-  text-align: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 /* TITLE STYLES */
 .title {
-  background: linear-gradient(to right, #420549, #cc16d9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 40px;
+    background: linear-gradient(to right, #420549, #cc16d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem; /* ~40px, using rem */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700; /* Make titles bolder */
+    letter-spacing: -0.02em; /* Slightly tighter letter spacing for titles */
 }
 
-/* PROJECTS CONTAINER - Adjusted for vertical stacking of entries */
+/* PROJECTS CONTAINER - Adjusted for responsive layout */
 .projects-container-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* General carousel/list for projects (both recent and UI/UX) */
 .projects-carousel,
-.projects-list-uiux { /* Apply the same styling to both project sections */
-  display: flex;
-  flex-direction: column; /* Stack projects one below another */
-  gap: 60px; /* Space between each project entry */
-  justify-content: center;
-  align-items: center; /* Center project entries */
-  padding-bottom: 30px;
-  overflow-x: hidden;
-  scroll-behavior: auto;
-  width: 100%; /* Ensure it takes full width of its wrapper */
+.projects-list-uiux {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+    padding-bottom: 30px;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+    width: 100%;
 }
 
 /* --- PROJECT ENTRY STYLES --- */
 
-/* Ensure old project-card styles are removed or overridden */
-.project-card {
-    display: none; /* Hide the old project cards if they somehow persist */
+.project-entry {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    border: 1px solid rgb(163, 163, 163);
+    padding: 20px;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Style for each individual project entry block */
-.project-entry {
-  width: 100%;
-  max-width: 900px; /* Max width for the project content, adjust as desired */
-  margin: 0 auto;
-  padding: 0 20px; /* Horizontal padding for content within the entry */
-  text-align: left; /* Align text content to the left */
+.project-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-entry-img {
-  width: 100%;
-  height: auto;
-  max-height: 450px; /* Control max height of project images */
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 20px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .project-entry-content {
-    /* Container for title, link, and description */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-entry-header {
-  display: flex;
-  flex-wrap: wrap; /* Allow title and link to wrap on smaller screens */
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .project-entry-title {
-  font-size: 2rem;
-  color: #333;
-  margin: 0;
-  flex-grow: 1; /* Allow title to take available space */
-}
-
-.visit-site-link {
-  font-size: 1rem;
-  color: #682b70;
-  text-decoration: none;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  margin-left: 15px; /* Space from title */
-}
-
-.visit-site-link:hover {
-  color: #cc16d9;
-  text-decoration: underline;
+    font-size: 1.35rem; /* Slightly adjusted for better hierarchy within the card */
+    color: #333;
+    margin: 0;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    font-weight: 600; /* Bolder for card titles */
 }
 
 .project-entry-description {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.6;
+    font-size: 0.95rem; /* Slightly larger for better readability within the card */
+    color: #555;
+    line-height: 1.6; /* Improved line-height for card descriptions */
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
-/* Contact section styles (from previous style.css) */
+/* Project Buttons Container */
+.project-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Button styles for both GitHub and Visit Site links */
+.github-link,
+.visit-site-link {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.github-link {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+}
+
+.github-link:hover {
+    background-color: #555;
+    border-color: #555;
+    color: white;
+    text-decoration: none;
+}
+
+.visit-site-link {
+    background-color: transparent;
+    color: #682b70;
+    border: 1px solid #682b70;
+}
+
+.visit-site-link:hover {
+    background-color: #682b70;
+    color: white;
+    text-decoration: none;
+}
+
+/* Contact section styles */
 #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    
 }
 
 .contact-info-upper-container {
     display: flex;
     justify-content: center;
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
-    background: (250, 250, 250);
+    border:none;
+    background: rgb(250, 250, 250); /* Corrected background value */
     margin: 2rem auto;
     padding: 1.5rem;
-    flex-wrap: wrap; /* Added for responsiveness */
-    gap: 20px; /* Added for spacing */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .contact-info-container {
@@ -290,123 +346,215 @@ section {
 }
 
 .contact-info-container p {
-    font-size: larger;
+    font-size: 1.125rem; /* Consistent with other text */
+    margin-bottom: 0; /* No margin-bottom for inline elements */
 }
 
 .contact-icon {
     cursor: default;
-    width: 2rem; /* Adjusted icon size */
     height: 2rem;
 }
 
 /* Footer styles */
 footer {
-    height: 7vh;
-    margin-top: 30px; /* Increased margin */
+    
+    margin-top: 30px;
     text-align: center;
     width: 100%;
+    padding: 10px 0; /* Added padding for smaller height */
 }
 
 footer p {
-    color: rgb(85, 85, 85);
-    font-size: smaller;
-    padding: 0; /* Override general p padding for footer */
+    color: rgb(193, 193, 193);
+    font-size: 0.875rem; /* ~14px, more appropriate for footer */
+    padding: 5px;
+    
+    background-color:rgb(65, 65, 65);
+    margin-bottom:0; /* Remove default paragraph margin */
 }
 
 footer p a {
-    color: rgb(85, 85, 85);
+    color: rgb(204, 204, 204);
     text-decoration: none;
-    margin: 0 10px; /* Space between links */
-    font-size: smaller;
+    margin: 1px 10px;
+    font-size: 0.875rem; /* Consistent with footer text */
 }
 
 footer p a:hover {
-    color: black;
+    color: rgb(250, 194, 229);
     text-decoration: underline;
     text-underline-offset: 8px;
-    text-decoration-color: rgb(121, 0, 111);
+    text-decoration-color: rgb(255, 210, 251);
 }
-
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
-  /* Adjusted for general section padding on smaller screens */
-  section {
-    padding: 30px 10px; /* Reduce horizontal padding for sections */
-  }
+    #desktop-nav {
+        display: none;
+    }
+    #hamburger-nav {
+        display: flex;
+    }
+    section {
+        padding: 30px 10px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .projects-carousel,
+    .projects-list-uiux {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0;
+    }
+    .project-entry {
+        width: calc(50% - 20px);
+        max-width: 450px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .title {
-    font-size: 32px;
-  }
-  .project-entry {
-    padding: 0 10px; /* Smaller horizontal padding for project entries */
-  }
-  .project-entry-img {
-    max-height: 250px; /* Adjust max height for smaller screens */
-  }
-  .project-entry-title {
-    font-size: 1.5rem; /* Smaller title on mobile */
-  }
-  .visit-site-link {
-    font-size: 0.9rem; /* Smaller link text on mobile */
-    margin-left: 10px; /* Adjust spacing */
-  }
-  .project-entry-description {
-    font-size: 0.9rem; /* Smaller description text on mobile */
-  }
-  /* Ensure header elements wrap if needed */
-  .project-entry-header {
-      flex-direction: column; /* Stack title and link vertically */
-      align-items: flex-start; /* Align stacked items to the left */
-      gap: 5px; /* Small gap between title and link when stacked */
-  }
-  .visit-site-link {
-      margin-left: 0; /* Remove left margin when stacked */
-  }
+    .title {
+        font-size: 2rem; /* ~32px, using rem */
+    }
+    .project-entry {
+        padding: 15px;
+        max-width: 100%;
+    }
+    .project-entry-img {
+        height: 200px;
+    }
+    .project-entry-title {
+        font-size: 1.2rem;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .github-link,
+    .visit-site-link {
+        width: 100%;
+    }
+
+    .project-entry-description {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .title {
-    font-size: 28px;
-  }
-  /* Footer responsive adjustments */
-  footer {
-    height: fit-content;
-    margin-bottom: 1rem;
-  }
-  footer p {
-    font-size: 0.8rem;
-  }
-  footer p a {
-    font-size: 0.8rem;
-  }
-  .contact-info-upper-container {
-    flex-direction: column; /* Stack contact info vertically */
-    align-items: center;
-  }
-  .contact-info-container p {
-    font-size: 1rem; /* Adjust font size for mobile contact info */
-  }
-  .hamburger-icon {
-    width: 25px; /* Adjust hamburger icon size */
-    height: 20px;
-  }
-  .menu-links a {
-    font-size: 1rem; /* Adjust hamburger menu link font size */
-  }
+    .title {
+        font-size: 1.75rem; /* ~28px, using rem */
+    }
+    footer {
+        height: fit-content;
+        margin-bottom: 1rem;
+    }
+    footer p {
+        font-size: 0.75rem; /* Slightly smaller for very small screens */
+    }
+    footer p a {
+        font-size: 0.75rem;
+    }
+    .contact-info-upper-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info-container p {
+        font-size: 1rem;
+    }
+    .hamburger-icon {
+        width: 25px;
+        height: 20px;
+    }
+    .menu-links a {
+        font-size: 1rem;
+    }
 }
-
-/* Ensure the body padding-top doesn't create issues with contact section */
 
 /* Adjust general paragraph padding for better mobile display */
 p {
-  padding: 0 10px; /* Consistent padding for all paragraphs */
+    padding: 0 10px; /* Consistent padding for all paragraphs */
+}
+
+/* --- Modal styles --- */
+/* (Keep these as they were, they are already well-optimized) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+    object-fit: contain;
+    transform: scale(0.95);
+    transition: transform 0.3s ease-out;
+}
+
+.modal[aria-hidden="false"] .modal-content {
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: lighter;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    outline: none;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .close {
+        font-size: 40px;
+        top: 15px;
+        right: 20px;
+    }
+
+    .modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
 }

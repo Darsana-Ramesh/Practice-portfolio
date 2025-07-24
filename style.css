@@ -15,9 +15,11 @@ html {
 }
 
 p {
-  padding: 0px 10px;
-  font-size: large;
+  padding: 5px 15px;
+  font-size: 20px;
   color: rgb(79, 79, 79);
+  line-height: 25px;
+  text-align: justify;
 }
 
 /* TRANSITION */
@@ -161,6 +163,8 @@ section {
 
 .section-container {
   display: flex;
+  gap: 35px;
+  height: 80%;
 }
 
 /* PROFILE SECTION */
@@ -204,17 +208,10 @@ section {
   margin: 3px;
   color: #434040;
   font-size: 30px;
-  
+  text-align: center;
   margin-bottom: 16px;
 }
 
-.title {
-  background: linear-gradient(to right, #420549, #cc16d9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 40px;
-  text-align: center;
-}
 
 #socials-container {
   display: flex;
@@ -298,11 +295,6 @@ section {
   text-align: center;
 }
 
-.section-container {
-  gap: 64px;
-  height: 80%;
-}
-
 .section__pic-container {
   height: 400px;
   width: 400px;
@@ -332,6 +324,7 @@ section {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 40px;
+  padding:5px 35px;
   justify-content: space-around;
 }
 
@@ -384,10 +377,11 @@ article .icon {
 }
 
 .title {
-  background: linear-gradient(to right, #420549, #cc16d9);
+  background: linear-gradient(#3d0543, #bc00ca);
   -webkit-background-clip: text;
+  padding:2px;
   -webkit-text-fill-color: transparent;
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
   margin: 10px;
 }
@@ -447,21 +441,22 @@ article .icon {
   font-size: 0.95rem;
   margin-bottom: 10px;
   flex-grow: 1;
+  text-align: center;
 }
 
 .proj-p{
   font-size: 20px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
   padding: 4px;
-  color: #823d86;
+  color: #48174b;
+  text-align: center;
 }
 
 .more-details-link {
   display: inline-block;
-  background-color: #9f2983;
-  color: white; /* Link text color is white by default */
+  background-color: #570150;
+  color: rgb(255, 255, 255); /* Link text color is white by default */
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
@@ -597,9 +592,9 @@ footer p {
 }
 
 article {
-  width: 60px;
-  height: 60px;
-  box-shadow: 4px 4px 8px #686868;
+  width: 70px;
+  height: 70px;
+  box-shadow: 2px 2px 15px #c2c2c2;
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -634,14 +629,15 @@ article:hover {
 
 .service-box {
   background: #ffffff;
-  border: 1px solid rgb(163, 163, 163);
-  border-radius: 24px;
-  padding: 20px;
+  border: 2px solid rgb(150, 43, 150);
+  border-radius: 20px;
+  padding: 10px;
   margin-top: 20px;
-  width: 250px;
+  width: 240px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
+
 
 .service-box:hover {
   background: linear-gradient(to right, #5e1567, #98339f);
