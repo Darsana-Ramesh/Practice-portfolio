@@ -1,40 +1,26 @@
 @media screen and (max-width: 1400px) {
-
   .about-containers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
   }
 
   #contact,
-  #projects {
+  #recent-projects,
+  #uiux-projects {
     height: fit-content;
   }
 }
 
-@media (max-width: 768px) {
-  /* Adjusted for responsiveness of 2-column layout */
-  #recent-projects .project-card {
-    min-width: unset; /* Remove fixed min-width */
-    width: 45%; /* Adjust width to allow two cards per row with gap */
-  }
-
-  #recent-projects .projects-carousel {
-    flex-direction: row; /* Ensure they stay in a row */
-    justify-content: center;
-    gap: 20px; /* Adjust gap for smaller screens */
-  }
-}
-
 @media screen and (max-width: 1200px) {
-
   #image1 {
-    width: 260px;
-    height: 260px;
-
+    width: 280px;
+    height: 280px;
   }
 
+  #image1 img {
+    height: 280px;
+    width: 280px;
+  }
 
   #desktop-nav {
     display: none;
@@ -46,109 +32,150 @@
 
   #experience,
   .experience-details-container {
-    margin-top: 2rem;
+    margin-top: var(--spacing-md);
   }
-
-  /* .arrow display none removed as carousel arrows are removed from HTML for recent-projects */
-  /* If you want to hide UI/UX carousel arrows on smaller screens, re-add this specifically for them or through JS */
-
 
   section,
   .section-container {
     height: fit-content;
-  }
-
-  section {
-    margin: 0 0%;
+    padding: var(--spacing-xl) var(--spacing-sm);
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   .section__pic-container {
-    width: 275px;
-    margin-top: 20px;
-    height: 275px;
-
-    margin: 0 auto 2rem;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto var(--spacing-md);
   }
 
   .about-containers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px;
-    justify-items: center;
+    flex-direction: column; /* Stack about containers */
+    gap: var(--spacing-md);
   }
 
+  .section__text {
+    padding: 0 var(--spacing-sm);
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card,
+  .project-entry {
+    width: calc(50% - var(--spacing-sm)); /* Two cards per row with gap */
+    max-width: 450px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
 }
 
-@media screen and (max-width:1000px) {
-
+@media screen and (max-width: 1000px) {
   .email-icon {
-    height: 30px;
-}
+    height: 28px;
+  }
+
   .about-containers,
   .contact-info-upper-container,
-  .btn-container {
+  .btn-container,
+  .service-boxes,
+  .article-container,
+  .projects-carousel,
+  .projects-grid,
+  .footer-links {
     flex-wrap: wrap;
-  }
-
-  #profile,
-  .section-container {
-    display: block;
-  }
-
-  #image1 img {
-
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-
-  #image1 {
-    width: 150px;
-    height: 150px;
-
-  }
-
-  #image1 img {
-
-    height: 200px;
+    justify-content: center;
+    align-items: center;
   }
 
   #profile {
-    /* height: 83vh; */
+    flex-direction: column; /* Stack profile pic and text */
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+
+  .section-container { /* Also apply to general section-container */
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+
+  #image1 img {
+    height: 250px;
+    width: 250px;
+  }
+
+  #profile {
+    height: fit-content;
+    padding-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .contact-info-upper-container {
+    max-width: 90%;
+    width: fit-content;
+    margin: var(--spacing-lg) auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #image1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  #image1 img {
+    height: 200px;
+    width: 200px;
+  }
+
+  #profile {
     margin-bottom: 0;
+    gap: var(--spacing-md);
   }
 
   article {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    width: 80px;
+    height: 80px;
   }
 
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
+  article .tool-icon {
+    width: 40px;
+    height: 40px;
   }
 
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
+  footer {
+    margin-bottom: var(--spacing-md);
   }
 
   .contact-info-container {
     margin: 0;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
   }
 
   .contact-info-container p,
   .nav-links li a {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .experience-sub-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .nav-links {
@@ -157,47 +184,144 @@
     text-align: center;
   }
 
-  /* For recent projects, stack cards on small screens */
-  #recent-projects .project-card {
-    width: 90%; /* Make them full width on tiny screens */
+  .project-card,
+  .project-entry {
+    width: 90%;
+    max-width: 350px;
   }
 
-
   .service-box {
-    margin-top: 20px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    width: 90%;
+    max-width: 300px;
+    padding: var(--spacing-md);
   }
 
   .service-boxes {
-    display: flex;
-    gap: 3px;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: var(--spacing-md);
   }
 
   .section__pic-container {
     width: auto;
-    height: 46vw;
-    margin-top: 20px;
+    height: 50vw;
+    margin-top: var(--spacing-md);
     justify-content: center;
   }
 
   .section__text__p2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .title {
-    font-size: 2rem;
-  }
-
-  .text-container {
-    text-align: justify;
+    font-size: 2.2rem;
   }
 
   p {
-    margin: 7px;
-    color: rgb(118, 117, 117);
+    margin: 5px auto;
+    padding: 0 10px;
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .more-details-link,
+  .github-link,
+  .visit-site-link {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .view-all-projects-link {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  /* Modal responsiveness */
+  .modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+  }
+  .close {
+      font-size: 40px;
+      top: 15px;
+      right: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    padding: 0 var(--spacing-md);
+  }
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+  }
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .hamburger-icon {
+    width: 22px;
+    height: 18px;
+  }
+  .menu-links a {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+  .project-card,
+  .project-entry {
+    padding: var(--spacing-sm);
+    width: 100%;
+  }
+  .project-img,
+  .project-entry-img {
+    height: 180px;
+  }
+  .project-title,
+  .project-entry-title {
+    font-size: 1.3rem;
+  }
+  .proj-p,
+  .project-entry-description {
+    font-size: 0.9rem;
+  }
+  .project-tag {
+    font-size: 0.8rem;
+  }
+  .more-details-link,
+  .github-link,
+  .visit-site-link {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+  }
+  .view-all-projects-link {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+  .contact-info-upper-container {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  .contact-info-container p {
+    font-size: 0.9rem;
+  }
+  .contact-icon {
+    height: 30px;
+  }
+  footer p, footer p a {
+    font-size: 0.8rem;
+  }
+  .footer-links {
+    gap: var(--spacing-sm);
   }
 }

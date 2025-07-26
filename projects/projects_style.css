@@ -1,5 +1,37 @@
 /* GENERAL STYLES */
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    /* Color Palette - Consistent with style.css */
+    --primary-purple: #6a0572;
+    --secondary-purple: #9b59b6;
+    --light-purple: #e0c3fc;
+    --light-blue: #8ec5fc;
+    --dark-text: #343a40;
+    --medium-text: #6c757d;
+    --light-text: #adb5bd;
+    --background-light: #f8f9fa;
+    --background-medium: #f0f2f5;
+    --background-white: #ffffff;
+    --border-light: #e9ecef;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* Spacing - Consistent with style.css */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    --spacing-xxl: 80px;
+
+    /* Border Radius - Consistent with style.css */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 50%;
+}
 
 * {
     margin: 0;
@@ -8,28 +40,29 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: rgb(220, 220, 220); /* Background color for the page */
+    font-family: "Inter", sans-serif;
+    background-color: var(--background-medium);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    line-height: 1.6; /* Improved readability for body text */
-    color: #333; /* Slightly darker default text color for better contrast */
+    line-height: 1.6;
+    color: var(--dark-text);
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Base font size for better responsiveness with rem units */
+    font-size: 16px;
 }
 
 p {
-    color: rgb(79, 79, 79); /* Keep original paragraph color */
+    color: var(--medium-text);
     padding: 0;
-    font-size: 1rem; /* Use rem for scalability based on html font-size */
-    line-height: 1.7; /* Slightly increased line-height for paragraphs */
-    margin-bottom: 1rem; /* Add consistent spacing below paragraphs */
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    text-align: justify;
 }
 
 a,
@@ -37,57 +70,56 @@ a,
     transition: all 300ms ease;
 }
 
-/* DESKTOP NAV */
+/* DESKTOP NAV - Consistent with style.css */
 nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0 50px;
+    padding: 0 var(--spacing-xl);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(198, 197, 197, 0.895);
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 4px 15px var(--shadow-light);
     transition: all 0.3s ease;
     width: 100%;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: var(--spacing-md);
     list-style: none;
-    font-size: 1.125rem; /* ~18px, slightly more common */
-    font-weight: 500; /* Slightly bolder for navigation */
+    font-size: 1.05rem;
+    font-weight: 500;
 }
 
 a {
-    color: black;
+    color: var(--dark-text);
     text-decoration: none;
-    text-decoration-color: white; /* This will be overridden by text-decoration */
 }
 
 a:hover {
-    color: rgb(150, 43, 150);
+    color: var(--primary-purple);
     text-decoration: underline;
-    text-underline-offset: 8px; /* Slightly reduced offset for better aesthetics */
-    text-decoration-color: rgb(121, 0, 111);
+    text-underline-offset: var(--spacing-xs);
+    text-decoration-color: var(--secondary-purple);
 }
 
 .logo {
-    font-size: 1.563rem; /* ~25px, using rem */
-    font-weight: 700; /* Bolder for prominence */
-    color: #333; /* Consistent color with body text or a distinct brand color */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-purple);
 }
 
 .logo:hover {
     cursor: default;
 }
 
-/* HAMBURGER MENU */
+/* HAMBURGER MENU - Consistent with style.css */
 #hamburger-nav {
     display: none;
 }
@@ -109,37 +141,38 @@ a:hover {
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: var(--dark-text);
     transition: all 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
 .menu-links {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    background-color: var(--background-white);
     width: fit-content;
-    min-width: 150px; /* Ensure a minimum width for readability */
+    min-width: 180px;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    border-radius: 8px; /* Rounded corners for menu */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 20px var(--shadow-medium);
 }
 
 .menu-links a {
     display: block;
-    padding: 10px 20px; /* Increased horizontal padding */
-    font-size: 1.125rem; /* Consistent with desktop nav links */
-    color: #333; /* Consistent text color */
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1.05rem;
+    color: var(--dark-text);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 .menu-links a:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Light hover background */
-    color: rgb(150, 43, 150); /* Match hover color */
-    text-underline-offset: 4px; /* Smaller underline for menu */
+    background-color: var(--background-light);
+    color: var(--primary-purple);
+    text-underline-offset: 4px;
 }
 
 .menu-links li {
@@ -147,11 +180,11 @@ a:hover {
 }
 
 .menu-links.open {
-    max-height: 300px; /* Or a dynamic height based on content */
+    max-height: 300px;
 }
 
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(10px, 5px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -159,81 +192,98 @@ a:hover {
 }
 
 .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px, -5px);
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
-.hamburger-icon span:first-child {
-    transform: none;
-    opacity: 1;
-}
-
-/* SECTION STYLES */
+/* SECTION STYLES - Consistent with style.css */
 section {
     width: 100%;
     max-width: 1400px;
-    padding: 60px 20px;
+    padding: var(--spacing-xxl) var(--spacing-md);
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-medium); /* Default section background */
+}
+
+#projects-section { /* Specific background for the main projects section */
+    background-color: var(--background-white);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) auto;
+    box-shadow: 0 8px 25px var(--shadow-light);
+}
+
+/* Sub-titles for project categories */
+#projects-section h2 {
+    font-size: 2.2rem;
+    color: var(--dark-text);
+    /* margin: var(--spacing-xxl) auto var(--spacing-lg) auto; Top margin for separation */
+    font-weight: 700;
     text-align: center;
 }
 
-/* TITLE STYLES */
+
+/* TITLE STYLES - Consistent with style.css */
 .title {
-    background: linear-gradient(to right, #420549, #cc16d9);
+    background: linear-gradient(to right, var(--primary-purple), var(--secondary-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem; /* ~40px, using rem */
+    font-size: 3.5rem;
     text-align: center;
-    margin-bottom: 40px;
-    font-weight: 700; /* Make titles bolder */
-    letter-spacing: -0.02em; /* Slightly tighter letter spacing for titles */
+    margin: var(--spacing-sm) auto var(--spacing-lg) auto;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
-/* PROJECTS CONTAINER - Adjusted for responsive layout */
+/* PROJECTS CONTAINER - Adjusted for responsive grid layout */
 .projects-container-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* General carousel/list for projects (both recent and UI/UX) */
-.projects-carousel,
-.projects-list-uiux {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    align-items: stretch;
-    padding-bottom: 30px;
-    overflow-x: hidden;
-    scroll-behavior: auto;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
-/* --- PROJECT ENTRY STYLES --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: var(--spacing-lg); /* Consistent gap */
+    justify-items: center; /* Center items in grid cells */
+    align-items: stretch; /* Ensure cards have equal height */
+    padding-bottom: var(--spacing-lg);
+    width: 100%;
+}
 
+/* --- PROJECT ENTRY STYLES - Consistent with project-card in style.css --- */
 .project-entry {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 450px;
-    border-radius: 16px;
-    border: 1px solid rgb(163, 163, 163);
-    padding: 20px;
+    width: 100%; /* Take full width of grid cell */
+    max-width: 450px; /* Max width for individual card */
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    padding: var(--spacing-md);
     text-align: left;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-light);
+    box-shadow: 0 6px 20px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-entry:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px var(--shadow-medium);
 }
 
 .project-entry-img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .project-entry-content {
@@ -246,241 +296,203 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-xs);
     flex-wrap: wrap;
 }
 
 .project-entry-title {
-    font-size: 1.35rem; /* Slightly adjusted for better hierarchy within the card */
-    color: #333;
-    margin: 0;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin: 0 auto var(--spacing-xs) auto; /* Center title */
     flex-basis: 100%;
-    margin-bottom: 10px;
-    font-weight: 600; /* Bolder for card titles */
+    font-weight: 700;
+    text-align: center;
 }
 
 .project-entry-description {
-    font-size: 0.95rem; /* Slightly larger for better readability within the card */
-    color: #555;
-    line-height: 1.6; /* Improved line-height for card descriptions */
+    font-size: 1rem;
+    color: var(--medium-text);
+    line-height: 1.6;
     margin-top: auto;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-md);
+    padding: 0 var(--spacing-xs);
+    text-align: justify;
 }
 
 /* Project Buttons Container */
 .project-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: var(--spacing-sm);
     margin-top: auto;
     width: 100%;
 }
 
-/* Button styles for both GitHub and Visit Site links */
+/* Button styles for both GitHub and Visit Site links - Consistent with style.css */
 .github-link,
 .visit-site-link {
     display: inline-block;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 12px 25px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     transition: all 0.3s ease;
     flex: 1;
     text-align: center;
     white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .github-link {
-    background-color: #333;
+    background-color: var(--dark-text);
     color: white;
-    border: 1px solid #333;
+    border: 1px solid var(--dark-text);
 }
 
 .github-link:hover {
-    background-color: #555;
-    border-color: #555;
+    background-color: var(--medium-text);
+    border-color: var(--medium-text);
     color: white;
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
 }
 
 .visit-site-link {
-    background-color: transparent;
-    color: #682b70;
-    border: 1px solid #682b70;
+    background: linear-gradient(to right, var(--primary-purple), var(--secondary-purple));
+    color: white;
+    border: 1px solid transparent;
 }
 
 .visit-site-link:hover {
-    background-color: #682b70;
+    background: linear-gradient(to right, #500456, #84479e);
     color: white;
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
 }
 
-/* Contact section styles */
+/* Contact section styles - Consistent with style.css */
 #contact {
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    height: fit-content;
+    padding: var(--spacing-xxl) var(--spacing-md);
+    color: white;
+    width: 100%;
+}
+
+#contact .section__text__p1 {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+#contact .title {
+    background: none;
+    -webkit-text-fill-color: white;
+    color: white;
+    text-align: center;
 }
 
 .contact-info-upper-container {
     display: flex;
     justify-content: center;
-    border-radius: 2rem;
-    border:none;
-    background: rgb(250, 250, 250); /* Corrected background value */
-    margin: 2rem auto;
-    padding: 1.5rem;
+    align-items: center;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 30px var(--shadow-strong);
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--spacing-md);
+    max-width: 600px;
+    width: 100%;
 }
 
 .contact-info-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    margin: 1rem;
+    gap: var(--spacing-xs);
+    margin: 0;
+    width: auto;
+    flex-basis: auto;
 }
 
 .contact-info-container p {
-    font-size: 1.125rem; /* Consistent with other text */
-    margin-bottom: 0; /* No margin-bottom for inline elements */
+    font-size: 1.1rem;
+    color: white;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-info-container p a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info-container p a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-icon {
     cursor: default;
-    height: 2rem;
+    height: 35px;
+    filter: brightness(2);
 }
 
-/* Footer styles */
+/* Footer styles - Consistent with style.css */
 footer {
-    
-    margin-top: 30px;
+   
     text-align: center;
     width: 100%;
-    padding: 10px 0; /* Added padding for smaller height */
+    padding: var(--spacing-md) 0;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
 footer p {
-    color: rgb(193, 193, 193);
-    font-size: 0.875rem; /* ~14px, more appropriate for footer */
-    padding: 5px;
-    
-    background-color:rgb(65, 65, 65);
-    margin-bottom:0; /* Remove default paragraph margin */
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    padding: 0;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 footer p a {
-    color: rgb(204, 204, 204);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    margin: 1px 10px;
-    font-size: 0.875rem; /* Consistent with footer text */
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 footer p a:hover {
-    color: rgb(250, 194, 229);
+    color: var(--light-purple);
     text-decoration: underline;
-    text-underline-offset: 8px;
-    text-decoration-color: rgb(255, 210, 251);
+    text-underline-offset: 6px;
+    text-decoration-color: var(--light-purple);
 }
 
-/* RESPONSIVE DESIGN */
-@media screen and (max-width: 1200px) {
-    #desktop-nav {
-        display: none;
-    }
-    #hamburger-nav {
-        display: flex;
-    }
-    section {
-        padding: 30px 10px;
-    }
+.copyright {
+    margin-top: var(--spacing-xs);
 }
 
-@media screen and (min-width: 769px) {
-    .projects-carousel,
-    .projects-list-uiux {
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        padding: 0;
-    }
-    .project-entry {
-        width: calc(50% - 20px);
-        max-width: 450px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .title {
-        font-size: 2rem; /* ~32px, using rem */
-    }
-    .project-entry {
-        padding: 15px;
-        max-width: 100%;
-    }
-    .project-entry-img {
-        height: 200px;
-    }
-    .project-entry-title {
-        font-size: 1.2rem;
-    }
-
-    .project-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .github-link,
-    .visit-site-link {
-        width: 100%;
-    }
-
-    .project-entry-description {
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .title {
-        font-size: 1.75rem; /* ~28px, using rem */
-    }
-    footer {
-        height: fit-content;
-        margin-bottom: 1rem;
-    }
-    footer p {
-        font-size: 0.75rem; /* Slightly smaller for very small screens */
-    }
-    footer p a {
-        font-size: 0.75rem;
-    }
-    .contact-info-upper-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .contact-info-container p {
-        font-size: 1rem;
-    }
-    .hamburger-icon {
-        width: 25px;
-        height: 20px;
-    }
-    .menu-links a {
-        font-size: 1rem;
-    }
-}
-
-/* Adjust general paragraph padding for better mobile display */
-p {
-    padding: 0 10px; /* Consistent padding for all paragraphs */
-}
-
-/* --- Modal styles --- */
-/* (Keep these as they were, they are already well-optimized) */
+/* --- Modal styles - Consistent with style.css --- */
 .modal {
     display: none;
     position: fixed;
@@ -544,17 +556,4 @@ p {
 
 .modal-open {
     overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .close {
-        font-size: 40px;
-        top: 15px;
-        right: 20px;
-    }
-
-    .modal-content {
-        max-width: 95vw;
-        max-height: 95vh;
-    }
 }

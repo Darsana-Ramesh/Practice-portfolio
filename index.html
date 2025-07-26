@@ -4,12 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darsana</title>
+  <title>Darsana - Professional Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
+  <!-- Google Fonts - Inter for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Desktop Navigation Bar -->
   <nav id="desktop-nav">
     <div class="logo">Darsana</div>
     <div>
@@ -22,6 +25,8 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Hamburger Navigation for Mobile -->
   <nav id="hamburger-nav">
     <div class="logo">Darsana</div>
     <div class="hamburger-menu">
@@ -33,218 +38,197 @@
       <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#service">Service</a></li>
+        <li><a href="#service" onclick="toggleMenu()">Service</a></li>
         <li><a href="#recent-projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
-
     </div>
   </nav>
-  <section id="profile" style="
-  background-image: url('images/bg2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-">
 
+  <!-- Profile Section -->
+  <section id="profile">
     <div class="section__pic-container" id="image1">
-      <img src="images/profile-pic.png" alt="darsana profile picture" />
+      <img src="images/img2.png" alt="Darsana profile picture" />
     </div>
     <div class="section__text">
-      <p class="section__text__p2">Hello, My Name is</p>
-      <h1 class="title">DARSANA R</h1>
-      <p class="section__text__p2">A Web Developer and Designer</p>
-      <a href="mailto:examplemail@gmail.com"><button class="btn btn-color-2">
-          Contact Me
-        </button></a>
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">
+        <span id="typing-name"></span><span class="typing-cursor">|</span>
+      </h1>
+      <p class="section__text__p2">Web Developer and Designer</p>
+      <div class="btn-container">
+        <a href="mailto:examplemail@gmail.com" class="btn btn-color-2">Contact Me</a>
       </div>
     </div>
-
   </section>
-  <section id="about" class="about">
 
+  <!-- About Section -->
+  <section id="about" class="about">
     <div class="section-container">
       <div class="section__pic-container">
         <img src="images/about-pic.png" alt="Profile picture" class="about-pic" />
       </div>
-
       <div class="about-details-container">
         <div class="text-container">
-          <p class="section__text__p1">Get To Know More</p>
-          <h1 class="title">About Me</h1>
+
+          <h2 class="title">Who I am</h2>
           <p>
-            Hi there! I'm a developer and designer who loves making digital things 
-            that are not just useful but also look great and are 
-            easy to use. I combine my tech skills with creative 
-            ideas to build websites, apps, and designs that 
-            truly connect with people. My passion is turning 
-            complex challenges into simple, beautiful solutions 
-            that work perfectly. I focus on creating online experiences that are 
+            Hi there! I'm a developer and designer who loves making digital things
+            that are not just useful but also look great and are
+            easy to use. I combine my tech skills with creative
+            ideas to build websites, apps, and designs that
+            truly connect with people. My passion is turning
+            complex challenges into simple, beautiful solutions
+            that work perfectly. I focus on creating online experiences that are
             smooth and enjoyable for everyone, making sure your ideas shine
-             brightly and leave a lasting impression on your audience
+            brightly and leave a lasting impression on your audience.
           </p>
         </div>
       </div>
     </div>
   </section>
-  <section>
-    <div class="what-i-do-container" id="service">
-      <h2 class="title">What I Do</h2>
 
+  <!-- Services Section -->
+  <section id="service">
+    <div class="what-i-do-container">
+      <h2 class="title">What I Do</h2>
       <div class="service-boxes">
         <div class="service-box">
-
           <h3>Web Development</h3>
-          <p>I craft From a blank screen to a fully functional website, I build smooth, responsive experiences using HTML, CSS,
-            and JavaScript — making ideas come alive on every device.</p>
+          <p>I build modern, high-performance websites that look great and work flawlessly on any device, from dynamic applications to robust e-commerce solutions.</p>
         </div>
-
         <div class="service-box">
           <h3>UI/UX Design</h3>
           <p>I dive into user journeys to design interfaces that feel intuitive and look stunning. It’s not just about
             looks — it’s about creating experiences people remember.</p>
         </div>
-
         <div class="service-box">
           <h3>Graphic Design</h3>
-          <p>I bring ideas to life visually, crafting compelling designs that speak volumes. From brand identities to marketing materials, 
-            it’s about creating impactful visuals that tell your unique story and capture attention.</p>
+          <p>I craft compelling visuals—from brand identities to social media graphics—that capture attention and tell your brand's unique story with style.</p>
         </div>
-
         <div class="service-box">
           <h3>Mentoring</h3>
-          <p>What started as a hobby turned into a passion — I guide beginners through the world of code and design,
+          <p>I guide beginners through the world of code and design,
             helping them grow with real-world insights and hands-on support.</p>
         </div>
-
       </div>
     </div>
-
   </section>
 
+  <!-- Experience/Skills Section -->
   <section id="experience">
     <p class="section__text__p1">View My</p>
     <h2 class="title">Skills & Knowledge</h2>
     <div class="experience-details-container">
-
       <div class="article-container">
-        <article title="python">
+        <article title="Python">
           <img src="images/python.png" alt="Python" class="tool-icon" />
         </article>
-        <article title="java">
+        <article title="Java">
           <img src="images/java.png" alt="Java" class="tool-icon" />
         </article>
-
         <article title="C">
           <img src="images/C.png" alt="C Language" class="tool-icon" />
         </article>
-
         <article title="HTML">
           <img src="images/html.png" alt="HTML" class="tool-icon" />
         </article>
         <article title="CSS">
           <img src="images/css.png" alt="CSS" class="tool-icon" />
         </article>
-
         <article title="JavaScript">
           <img src="images/js.png" alt="JavaScript" class="tool-icon" />
         </article>
-
         <article title="Git">
           <img src="images/git.png" alt="Git" class="tool-icon" />
         </article>
-
         <article title="GitHub">
           <img src="images/github.png" alt="GitHub" class="tool-icon" />
         </article>
-
         <article title="Bootstrap">
           <img src="images/bootstrap.png" alt="Bootstrap" class="tool-icon" />
         </article>
-
-        <article title="figma">
+        <article title="Figma">
           <img src="images/figma.png" alt="Figma" class="tool-icon" />
         </article>
-        <article title="flask">
+        <article title="Flask">
           <img src="images/flask.png" alt="Flask" class="tool-icon" />
         </article>
-
-        <article title="php">
+        <article title="PHP">
           <img src="images/php.png" alt="PHP" class="tool-icon" />
         </article>
-
         <article title="MySQL">
           <img src="images/mysql.png" alt="MySQL" class="tool-icon" />
         </article>
-
         <article title="R">
           <img src="images/rprog.png" alt="R" class="tool-icon" />
         </article>
-
       </div>
-
     </div>
   </section>
 
-  <section id="recent-projects" style="background-color: rgb(220, 220, 220);">
+  <!-- Recent Projects Section -->
+  <section id="recent-projects">
     <h2 class="title">Recent Projects</h2>
-    <div class="projects-container-wrapper"> <div class="projects-carousel" id="recentProjectsCarousel">
-            <div class="project-card">
-                <img src="images/project-1.png" alt="CORBEAT - Heart Disease Predictor" class="project-img" />
-                <h2 class="project-title">CORBEAT</h2>
-                <p class="proj-p">Heart Disease Prediction System</h3>
-                <p class="project-tag">Machine Learning Based Project</p>
-                <a href="https://github.com/Darsana-Ramesh/HeartDiseasePrediction-ML" class="more-details-link">More Details</a>
-            </div>
+    <div class="projects-container-wrapper">
+      <div class="projects-carousel" id="recentProjectsCarousel">
+        <div class="project-card">
+          <img src="images/project-1.png" alt="CORBEAT - Heart Disease Predictor" class="project-img" />
+          <h3 class="project-title">CORBEAT</h3>
+          <p class="proj-p">Heart Disease Prediction System</p>
+          <p class="project-tag">Machine Learning Based Project</p>
+          <a href="https://github.com/Darsana-Ramesh/HeartDiseasePrediction-ML" class="more-details-link" target="_blank">More Details</a>
+        </div>
 
-            <div class="project-card">
-                <img src="images/project-2.png" alt="Canteen Management System" class="project-img" />
-                <h2 class="project-title">CanteenExpress</h2>
-                <p class="proj-p">Canteen Management System</h3>
-                <p class="project-tag">Database Management Project</p>
-                <a href="https://darsana-ramesh.github.io/CanteenExpress/" class="more-details-link">More Details</a>
-            </div>
+        <div class="project-card">
+          <img src="images/project-2.png" alt="Canteen Management System" class="project-img" />
+          <h3 class="project-title">CanteenExpress</h3>
+          <p class="proj-p">Canteen Management System</p>
+          <p class="project-tag">Database Management Project</p>
+          <a href="https://darsana-ramesh.github.io/CanteenExpress/" class="more-details-link" target="_blank">More Details</a>
+        </div>
 
-            <div class="project-card">
-              <img src="images/project-4.png" alt="WEBWIZARD-learning website" class="project-img" />
-              <h2 class="project-title">WEB-WIZARD</h2>
-              <p class="proj-p">An Online Learning Platform</h3>
-              <p class="project-tag">Front-end Development Project</p>
-              <a href="projects/projects.html" class="more-details-link">More Details</a>
-          </div>
-
-            </div>
-        <a href="projects/projects.html" class="view-all-projects-link">View All Projects &rarr;</a>
+        <div class="project-card">
+          <img src="images/project-4.png" alt="WEBWIZARD-learning website" class="project-img" />
+          <h3 class="project-title">WEB-WIZARD</h3>
+          <p class="proj-p">An Online Learning Platform</p>
+          <p class="project-tag">Front-end Development Project</p>
+          <a href="projects/projects.html" class="more-details-link">More Details</a>
+        </div>
+      </div>
+      <a href="projects/projects.html" class="view-all-projects-link">View All Projects &rarr;</a>
     </div>
-</section>
-
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h2 class="title">Contact Me</h2>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="images/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:examplemail@gmail.com">designerdev@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="images/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-      </div>
-
-      <div class="contact-info-container">
-        <img src="images/location.png" alt="Location icon" class="icon contact-icon" />
-        <p>Bangaluru</p>
-      </div>
-    </div>
-
-    <footer>
-      <p><a href="#about">About</a></p>
-      <p><a href="#service">Services</a></p>
-      <p><a href="#recent-projects">Projects</a></p>
-      <p>Copyright &#169; 2025 portfolio. All Rights Reserved.</p>
-    </footer>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact">
+  <p class="section__text__p1">Get in Touch</p>
+  <h2 class="title">Contact Me</h2>
+  <div class="contact-info-upper-container">
+    <div class="contact-info-container">
+      <img src="images/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+      <p><a href="mailto:designerdev@gmail.com">designerdev@gmail.com</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img src="images/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+      <p><a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img src="images/github.png" alt="GitHub icon" class="icon contact-icon" />
+      <p><a href="https://www.github.com/yourprofile" target="_blank">GitHub</a></p>
+    </div>
+    
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <p><a href="#about">About</a></p>
+      <p><a href="#services">Services</a></p>
+      <p><a href="#recent-projects">Projects</a></p>
+    </div>
+    <p class="copyright">Copyright &#169; 2025 Darsana. All Rights Reserved.</p>
+  </footer>
+</section>
   <script src="script.js"></script>
 </body>
 
