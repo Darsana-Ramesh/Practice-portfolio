@@ -17,9 +17,9 @@ document.querySelectorAll('section').forEach(el => {
   observer.observe(el);
 });
 
-// Typing Animation for "DARSANA R"
+
 const typingNameElement = document.getElementById('typing-name');
-const nameToType = "DARSANA R";
+const nameToType = "Your Name";
 let charIndex = 0;
 let typingInterval;
 
