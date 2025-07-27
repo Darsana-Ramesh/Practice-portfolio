@@ -2,6 +2,9 @@
 
 This is my personal portfolio website built using **HTML**, **CSS**, and **JavaScript** to showcase my projects, skills, and experience. The goal is to create a smooth, responsive, and visually engaging representation of my work as a developer and designer.
 
+<img src="s1.png">
+<img src="s2.png">
+
 ## 🔗 Live Demo
 
 [Check it Out Here 🚀](https://darsana-ramesh.github.io/Portfolio/)
