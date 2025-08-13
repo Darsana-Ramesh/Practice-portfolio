@@ -1,11 +1,11 @@
-#  Personal Portfolio Website - [Check it Out Here ](https://darsana-ramesh.github.io/Portfolio/)
+#  Personal Portfolio Website - [Check it Out Here ](https://darsana-ramesh.github.io/Practice-portfolio/)
 
 This is my personal portfolio website built using **HTML**, **CSS**, and **JavaScript** to showcase my projects, skills, and experience. The goal is to create a smooth, responsive, and visually engaging representation of my work as a developer and designer.
 
 <img src="images/landing.png">
 
 ## Live Demo
-[Check it Out Here ](https://darsana-ramesh.github.io/Portfolio/)
+[Check it Out Here ](https://darsana-ramesh.github.io/Practice-portfolio/)
 
 <img src="images/s1.jpeg">
 
